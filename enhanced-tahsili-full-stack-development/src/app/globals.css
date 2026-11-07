@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --petrol: #0B4F6C;
+  --coral: #F4845F;
+  --turq: #3AAFA9;
+  --bg: #F3F7F9;
+  --surface: #FFFFFF;
+  --ink: #16303B;
+  --muted: #5B6C75;
+  --line: #D6E2E8;
+  --ok: #2E9E5B;
+  --okbg: #E3F5EA;
+  --bad: #D24B45;
+  --badbg: #FBE7E5;
+  --chip: #E8F3F6;
+  --head: #0B4F6C;
+  --headInk: #FFFFFF;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0C1A20;
+  --surface: #13262E;
+  --ink: #E6F1F5;
+  --muted: #9BB1BA;
+  --line: #24414C;
+  --okbg: #173A28;
+  --badbg: #3E1D1B;
+  --chip: #183641;
+  --head: #082F40;
+  --headInk: #F2FAFC;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), "Tajawal", "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.7;
+  direction: rtl;
+}
+
+.font-display-ar {
+  font-family: var(--font-display), "Baloo Bhaijaan 2", "Tajawal", sans-serif;
+}
+
+.btn-tactile {
+  box-shadow: 0 4px 0 #C9623F;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+}
+
+.btn-tactile:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #C9623F;
+}
+
+.btn-tactile-turq {
+  box-shadow: 0 4px 0 #26807B;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+}
+
+.btn-tactile-turq:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #26807B;
+}
+
+.btn-tactile-gold {
+  box-shadow: 0 4px 0 #C9923D;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+}
+
+.btn-tactile-gold:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #C9923D;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.35s ease;
+}
+
+sub,
+sup {
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+bdi {
+  unicode-bidi: isolate;
+}
+
+/* Certificate Styling */
+.cert-frame {
+  background: #FFFDF8;
+  color: #16303B;
+  border: 10px double #0B4F6C;
+  border-radius: 10px;
+  position: relative;
+}
+
+.cert-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1.5px solid #F4845F;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only-area {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
